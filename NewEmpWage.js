@@ -11,7 +11,8 @@
 }
 
 //UC3 function
-const IS_PART_TIME = 1;
+{
+    const IS_PART_TIME = 1;
 const IS_FULL_TIME = 2;
 const PART_TIME_HOURS = 4;
 const FULL_TIME_HOURS = 8;
@@ -35,4 +36,20 @@ const WAGE_PER_HOUR = 20;
     let empHrs = getWorkingHours(empCheck);
     let empWage = empHrs * WAGE_PER_HOUR;
     console.log("Hours:" + empHrs + "Emp wage: " + empWage);
+    }
+}
+
+//UC4 for loop
+{
+    let EMP_WAGE_PERHOUR = 20;
+    const NUM_OF_WORKINGDAYS = 20;
+    let totalEmpHrs = 0;
+    for(let day = 0; day < NUM_OF_WORKINGDAYS; day++){
+        let empCheck = Math.floor(Math.random() * 10) % 3;
+        totalEmpHrs += getWorkingHours(empCheck);
+        console.log(empCheck);
+        console.log(totalEmpHrs);
+    }
+    let totalEmpWage = totalEmpHrs * EMP_WAGE_PERHOUR;
+    console.log("Hours: " + totalEmpHrs + "Total emp wage is: " + totalEmpWage);
 }
