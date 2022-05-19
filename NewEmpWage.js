@@ -47,9 +47,24 @@ const WAGE_PER_HOUR = 20;
     for(let day = 0; day < NUM_OF_WORKINGDAYS; day++){
         let empCheck = Math.floor(Math.random() * 10) % 3;
         totalEmpHrs += getWorkingHours(empCheck);
-        console.log(empCheck);
-        console.log(totalEmpHrs);
     }
     let totalEmpWage = totalEmpHrs * EMP_WAGE_PERHOUR;
     console.log("Hours: " + totalEmpHrs + "Total emp wage is: " + totalEmpWage);
+}
+
+//UC5 while loop
+{
+    let EMP_WAGE_PERHOUR = 20;
+    const NUM_OF_WORKINGDAYS = 20;
+    const MAX_hOURS_IN_MONTH = 160;
+    let totalEmpHrs = 0;
+    let totalWorkingDays=0;
+    while(totalEmpHrs <= MAX_hOURS_IN_MONTH && totalWorkingDays <= NUM_OF_WORKINGDAYS){
+        totalWorkingDays++;
+        let empCheck = Math.floor(Math.random() * 10) % 3;
+        let empHrs = getWorkingHours(empCheck);
+        totalEmpHrs += empHrs;
+    }
+    totalEmpWage = EMP_WAGE_PERHOUR * totalEmpHrs
+    console.log('UC5 Total emp wage is: ' + totalEmpWage);
 }
